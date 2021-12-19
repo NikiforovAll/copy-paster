@@ -29,6 +29,7 @@ static CommandLineBuilder BuildCommandLine()
 {
     var root = new DownloadFromGithub();
     root.AddGlobalOption(new Option<bool>("--dry-run", "Dry run"));
+    root.AddGlobalOption(new Option<bool>("--raw", "Raw. No panel"));
 
     return new CommandLineBuilder(root);
 }

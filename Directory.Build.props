@@ -14,9 +14,20 @@
     <Authors>nikiforovall</Authors>
   </PropertyGroup>
 
+  <PropertyGroup Label="Package">
+    <Title>CopyPaster (copa)</Title>
+    <Description>Enables copy-paste driven development. CopyPaster (aka copa)</Description>
+    <PackageTags>global-tool;productivity</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/nikiforovall/copy-paster</PackageProjectUrl>
+    <PackageIcon>Icon.jpg</PackageIcon>
+    <RepositoryUrl>https://github.com/nikiforovall/copy-paster.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>https://github.com/nikiforovall/copy-paster/releases</PackageReleaseNotes>
+  </PropertyGroup>
+
   <PropertyGroup Label="Repository">
-    <RepositoryUrl></RepositoryUrl>
-    <LicenseUrl>MIT</LicenseUrl>
+    <RepositoryUrl>https://nuget.org/packages/NikiforovAll.CopyPaster</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 

@@ -34,6 +34,8 @@ public class DownloadFromGithub : RootCommand
 
         public bool DryRun { get; set; }
 
+        public bool Raw { get; set; }
+
         public async Task<int> InvokeAsync(InvocationContext context)
         {
             if (this.Url is null)
@@ -54,7 +56,7 @@ public class DownloadFromGithub : RootCommand
                         {
                             return;
                         }
-                        if (this.DryRun)
+                        if (this.DryRun && !this.Raw)
                         {
                             var panel = new Panel(content.EscapeMarkup())
                             {
@@ -62,6 +64,10 @@ public class DownloadFromGithub : RootCommand
                                 Header = new PanelHeader($"{u.Path}", Justify.Right),
                             };
                             AnsiConsole.Write(panel);
+                        }
+                        else if (this.DryRun)
+                        {
+                            Console.WriteLine(content);
                         }
                         else
                         {
