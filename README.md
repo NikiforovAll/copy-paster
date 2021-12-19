@@ -50,3 +50,7 @@ Options:
 * [] handle folder download
 * [] port to npx
 * [] cross-platform path handling
+
+## Credits
+
+Icon: <https://twitter.com/nicodotgay/statuses/1458891554026930181>
