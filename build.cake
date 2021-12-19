@@ -28,21 +28,7 @@ Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
-        DotNetRun("./src/CopyPaster");
-    });
-
-Task("Run")
-    .Description("Run the command.")
-    .IsDependentOn("Build")
-    .Does(() =>
-    {
-        DotNetBuild(
-            ".",
-            new DotNetBuildSettings()
-            {
-                Configuration = configuration,
-                NoRestore = true,
-            });
+        DotNetBuild(".");
     });
 
 Task("Test")
