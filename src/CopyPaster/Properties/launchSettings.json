@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CopyPaster": {
+      "commandName": "Project",
+      "commandLineArgs": "https://github.com/NikiforovAll/na-templates/blob/main/Directory.Build.props"
+    }
+  }
+}
