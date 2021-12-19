@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nikiforovall/copy-paster/blob/main/LICENSE)
 [![contributionswelcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/nikiforovall/copy-paster)
 
-Download code and saves it to local file system.
+Downloads code and saves it to local file system. Copy-paste-driven development made easy.
 
 Same as `wget https://URL/ --output-document=FILE_NAME`, but you don't have to pass a link to raw version. It rewrites "https://github.com" to "https://raw.githubusercontent.com/" automatically for you.
 
@@ -50,6 +50,7 @@ Options:
 * [] handle folder download
 * [] port to npx
 * [] cross-platform path handling
+* [] ⚠ currently, it overrides files stored locally, prompt user for final decision
 
 ## Credits
 
