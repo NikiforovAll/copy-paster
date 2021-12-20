@@ -74,7 +74,23 @@ public class DownloadFromGithub : RootCommand
                             var output = this.Output ??
                                 u.Path.Split('/', StringSplitOptions.RemoveEmptyEntries)
                                 .Last();
-                            await this.fileSaver.Save(output, content);
+                            var fileSaved = await this.fileSaver.Save(output, content);
+
+                            if (!fileSaved)
+                            {
+                                var @override = AnsiConsole.Prompt(
+                                    new SelectionPrompt<bool>()
+                                        .Title($"\nDo you want to override the file? [red]{output}[/]")
+                                        .AddChoices(new[] { true, false }));
+                                if (@override)
+                                {
+                                    await this.fileSaver.Save(output, content, force: true);
+                                }
+                                else
+                                {
+                                    AnsiConsole.Markup("[grey]Skipped[/]");
+                                }
+                            }
                         }
                     });
             }

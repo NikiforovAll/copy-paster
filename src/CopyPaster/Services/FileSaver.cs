@@ -13,9 +13,20 @@ public class FileSaver
     {
     }
 
-    public async Task Save(
+    public async Task<bool> Save(
         string path,
         string content,
-        CancellationToken cancellationToken = default) =>
-            await this.fileSystem.File.WriteAllTextAsync(path, content, cancellationToken);
+        bool force = false,
+        CancellationToken cancellationToken = default)
+    {
+        var exists = this.fileSystem.File.Exists(path);
+
+        if (exists && !force)
+        {
+            return false;
+        }
+        await this.fileSystem.File.WriteAllTextAsync(path, content, cancellationToken);
+
+        return true;
+    }
 }
